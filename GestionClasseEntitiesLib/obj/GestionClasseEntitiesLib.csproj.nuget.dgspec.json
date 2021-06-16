@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj": {}
+    "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj": {}
   },
   "projects": {
-    "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj": {
+    "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
+        "projectUniqueName": "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
         "projectName": "GestionClasseEntitiesLib",
-        "projectPath": "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
+        "projectPath": "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
         "packagesPath": "C:\\Users\\clair\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\obj\\",
+        "outputPath": "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

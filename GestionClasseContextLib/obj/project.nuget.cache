@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZU1gmDkOvl4ZDT1+ZxniFvdrhAMMDeqk99BMJPDRBYNZWVlQRY0rp3cm3BA+mwupDzHKzww8+mXVzt0pM0mJw==",
+  "dgSpecHash": "oAr3B2uJZqBN4bB2FYaCyDIDnhzuPYLvzqvV/jEUmkdMabNxs9g+0ev1oxU8TPyLlpvmWCX6P6m/tCTy/02Udw==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseContextLib\\GestionClasseContextLib.csproj",
+  "projectFilePath": "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseContextLib\\GestionClasseContextLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clair\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\clair\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

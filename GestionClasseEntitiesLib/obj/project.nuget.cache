@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6IkfteQvKW92QSXa307nzK5fINgWgJA/hcIfd/cCp6F4OXEObCmK3qGP+34s9xmnbvCmr5rgnEUPNgTHz7TBkw==",
+  "dgSpecHash": "qzXSxo3dlAO1dyf42SPTuOG130yWPS+LmezxII8lWnQNI49jjyJI8EzzJ70zASxske4F3yA2X4I1VN4QN1FtKQ==",
   "success": true,
-  "projectFilePath": "C:\\dev\\Projet Asp .NET\\GestionClasses\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
+  "projectFilePath": "C:\\dev\\Projet Asp .NET\\GestionClasse\\GestionClasseEntitiesLib\\GestionClasseEntitiesLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clair\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\clair\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

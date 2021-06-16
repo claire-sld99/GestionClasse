@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GestionClasseEntitiesLib\GestionClasseEntitiesLib.csproj"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0"/>
+    <ProjectReference Include="..\GestionClasseEntitiesLib\GestionClasseEntitiesLib.csproj"/>
   </ItemGroup>
 
 </Project>
