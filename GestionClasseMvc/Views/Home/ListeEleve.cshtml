@@ -1,4 +1,4 @@
-@model GestionClasseMvc.Models.HomeIndexViewModel
+@model GestionClasseMvc.Models.EleveViewModel
 @{
     ViewData["Title"] = "Eleves Page";
 }
@@ -8,10 +8,13 @@
 </div>
 
 <hr>
-<div class="text-center">
+<div>
+    <ul class="list-group">
     @foreach (var item in Model.Eleves)
     {
-        <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID">@item.EleveNom  @item.ElevePrenom</a>
+        <li class="list-item-group">
+            <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID">@item.EleveNom  @item.ElevePrenom</a>
+        </li>
     }
-
+    </ul>
 </div>

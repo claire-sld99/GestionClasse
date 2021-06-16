@@ -51,14 +51,17 @@ namespace GestionClasseMvc.Controllers
             {
                 return NotFound("MET UN ID STP");
             }
+            var ev = new EleveViewModel();
+
                 var model = db.Eleves.Where(e => e.ClasseID == id).ToList();
+                ev.Eleves = model;
                 if(model == null)
                 {
                     return NotFound("Aucuns élèves trouvés");         
                 }
             
             
-            return View(model);
+            return View(ev);
         }
     }
 }
