@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GestionClasseMvc.Models;
 using Ifinfo.Shared;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace GestionClasseMvc.Controllers
 {
@@ -41,6 +43,22 @@ namespace GestionClasseMvc.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult ListeEleve(long? id)
+        {
+            if(!id.HasValue)
+            {
+                return NotFound("MET UN ID STP");
+            }
+                var model = db.Eleves.Where(e => e.ClasseID == id).ToList();
+                if(model == null)
+                {
+                    return NotFound("Aucuns élèves trouvés");
+                }
+            
+            
+            return View(model);
         }
     }
 }

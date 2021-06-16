@@ -1,0 +1,17 @@
+@model GestionClasseMvc.Models.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Eleves Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Gestion des Elèves</h1>
+</div>
+
+<hr>
+<div class="text-center">
+    @foreach (var item in Model.Eleves)
+    {
+        <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID">@item.EleveNom  @item.ElevePrenom</a>
+    }
+
+</div>

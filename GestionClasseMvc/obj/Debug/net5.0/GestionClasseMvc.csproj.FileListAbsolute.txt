@@ -166,3 +166,4 @@ C:\dev\Projet Asp .NET\GestionClasse\GestionClasseMvc\obj\Debug\net5.0\GestionCl
 C:\dev\Projet Asp .NET\GestionClasse\GestionClasseMvc\obj\Debug\net5.0\GestionClasseMvc.Views.pdb
 C:\dev\Projet Asp .NET\GestionClasse\GestionClasseMvc\obj\Debug\net5.0\GestionClasseMvc.csproj.CopyComplete
 C:\dev\Projet Asp .NET\GestionClasse\GestionClasseMvc\obj\Debug\net5.0\GestionClasseMvc.genruntimeconfig.cache
+C:\dev\Projet Asp .NET\GestionClasse\GestionClasseMvc\obj\Debug\net5.0\Razor\Views\Home\ListeEleve.cshtml.g.cs
