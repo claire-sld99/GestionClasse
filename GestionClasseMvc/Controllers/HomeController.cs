@@ -6,21 +6,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GestionClasseMvc.Models;
+using Ifinfo.Shared;
 
 namespace GestionClasseMvc.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private GestionClasse db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, GestionClasse injectedContext)
         {
             _logger = logger;
+            db = injectedContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model = new HomeIndexViewModel
+            {
+                Classes = db.Classes.ToList(),
+                Eleves = db.Eleves.ToList()
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()
