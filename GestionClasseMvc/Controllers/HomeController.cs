@@ -54,7 +54,7 @@ namespace GestionClasseMvc.Controllers
                 var model = db.Eleves.Where(e => e.ClasseID == id).ToList();
                 if(model == null)
                 {
-                    return NotFound("Aucuns élèves trouvés");
+                    return NotFound("Aucuns élèves trouvés"); 
                 }
             
             
