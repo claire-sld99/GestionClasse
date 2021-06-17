@@ -26,7 +26,7 @@ namespace Ifinfo.Shared
         [Column(TypeName = "longtext")]
         public string EvaluationLibelle { get; set; }
         [Column(TypeName = "datetime")]
-        public byte[] EvaluationDate { get; set; }
+        public DateTime EvaluationDate { get; set; }
         [Column(TypeName = "longtext")]
         public string EvaluationMatiere { get; set; }
 
