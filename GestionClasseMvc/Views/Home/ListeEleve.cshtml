@@ -1,5 +1,6 @@
 @model GestionClasseMvc.Models.EleveViewModel
 @using Ifinfo.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Eleves Page";
 }
@@ -35,6 +36,6 @@
 @*AFFICHAGE EVALUATION*@
 <div class="text-center">
     <h1 class="display-4"> Evaluation Classe @Model.Classe.ClasseNom</h1>
-    <a  asp-controller="Home" asp-action="AjoutEvaluation" class="btn btn-success">Ajout d'une évaluation ici</a>
+    <a  asp-controller="Home" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajout d'une évaluation ici</a>
 </div>
 

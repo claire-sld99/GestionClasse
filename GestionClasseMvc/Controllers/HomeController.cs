@@ -101,6 +101,17 @@ namespace GestionClasseMvc.Controllers
 
         public IActionResult AjoutEvaluation()
         {
+            return View("AjoutEvaluation");
+        }
+
+        [HttpPost]
+        public IActionResult AjoutEvaluation(Evaluation evaluation)
+        {
+             if(ModelState.IsValid)
+             {
+                 db.Evaluations.Add(evaluation);
+                db.SaveChanges();
+             }
             return View();
         }
     }
