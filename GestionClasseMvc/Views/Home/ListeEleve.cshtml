@@ -9,16 +9,7 @@
 </div>
 
 <hr>
-<div>
-    <ul class="list-group">
-    @foreach (var item in Model.Eleves)
-    {
-        <li class="list-item-group">
-            <a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@item.EleveID">@item.EleveNom  @item.ElevePrenom</a>
-        </li>
-    }
-    </ul>
-</div>
+
 <div class="row" style="align-items: center;">
     <table class="table" style="width: 500px;">
         <thead class="thead-inverse">
