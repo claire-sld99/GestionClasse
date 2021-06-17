@@ -1,48 +1,59 @@
 @using Ifinfo.Shared
+@model EleveDetailViewModel
 @{
     ViewData["Title"] = "Eleves Page";
 }
 <div class="text-center">
-    <h1 class="display-4">@Model.EleveNom @Model.ElevePrenom</h1>
+    <h1 class="display-4">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</h1>
 </div>
 <hr />
 
-<form method="POST" style="width: 300px;">
+<form asp-controller="Home" asp-action="test" method="POST" style="width: 300px;">
+    <input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>
     <fieldset id="field" disabled="true">
         <legend>Détail de l'élève</legend>
         <div class="mb-3">
             <label for="nom" class="form-label">Nom :</label>
-            <input type="text" id="nom" class="form-control" placeholder="@Model.EleveNom">
+            <input type="text" id="nom" class="form-control" asp-for="Eleve.EleveNom" name="EleveNom" placeholder="@Model.Eleve.EleveNom">
         </div>
         <div class="mb-3">
             <label for="prenom" class="form-label">Prenom :</label>
-            <input type="text" id="prenom" class="form-control" placeholder="@Model.ElevePrenom">
+            <input type="text" id="prenom" class="form-control" asp-for="Eleve.ElevePrenom" name="ElevePrenom" placeholder="@Model.Eleve.ElevePrenom">
         </div>
         <div class="mb-3">
             <label for="sexe" class="form-label">Sexe :</label>
-            <select class="form-control" id="sexe">
-                <option>@Model.EleveSexe</option>
+            <select class="form-control" asp-for="Eleve.EleveSexe" name="EleveSexe" id="sexe">
+                <option>@Model.Eleve.EleveSexe</option>
                 <option>H</option>
                 <option>F</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="adresse" class="form-label">Adresse :</label>
-            <input type="text" id="adresse" class="form-control" placeholder="@Model.EleveAdresse">
+            <input type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse" name="EleveAdresse" placeholder="@Model.Eleve.EleveAdresse">
         </div>
         <div class="mb-3">
             <label for="code_postale" class="form-label">Code postale :</label>
-            <input type="text" id="code_postale" class="form-control" placeholder="@Model.EleveCodePostal">
+            <input type="text" id="code_postale" class="form-control" asp-for="Eleve.EleveCodePostal" name="EleveCodePostal" placeholder="@Model.Eleve.EleveCodePostal">
         </div>
         <div class="mb-3">
             <label for="ville" class="form-label">Ville :</label>
-            <input type="text" id="ville" class="form-control" placeholder="@Model.EleveVille">
+            <input type="text" id="ville" class="form-control" asp-for="Eleve.EleveVille" name="EleveVille" placeholder="@Model.Eleve.EleveVille">
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Telephone :</label>
-            <input type="text" id="telephone" class="form-control" placeholder="@Model.EleveTelephone">
+            <input type="text" id="telephone" class="form-control" asp-for="Eleve.EleveTelephone" name="EleveTelephone" placeholder="@Model.Eleve.EleveTelephone">
         </div>
         <input type="submit" value="enregistrer" id="btn_enregistrer" style="display: none;">
     </fieldset>
     <button type="button" id="btn_modify" onclick="OnModify()" class="btn btn-primary">modifier</button>
 </form>
+
+@* @using (Html.BeginForm("test", "Home", FormMethod.Post))
+{
+    <div>
+        <label class="form-label">Nom :</label>
+        @Html.TextBoxFor(m => m.Eleve.EleveNom);
+    </div>
+    <input type="submit" value="Submit"/>
+} *@

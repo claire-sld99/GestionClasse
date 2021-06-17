@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using GestionClasseMvc.Models;
 using Ifinfo.Shared;
 using Microsoft.EntityFrameworkCore;
-// using System.Linq;
+using System.Linq;
 
 namespace GestionClasseMvc.Controllers
 {
@@ -16,6 +16,8 @@ namespace GestionClasseMvc.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private GestionClasse db;
+        // [BindProperty]
+        public Eleve eleve1 { get; set; }
 
         public HomeController(ILogger<HomeController> logger, GestionClasse injectedContext)
         {
@@ -69,20 +71,36 @@ namespace GestionClasseMvc.Controllers
                 return NotFound("Mettez un id dans url");
             }
             var model = db.Eleves.SingleOrDefault(e => e.EleveID == id);
+            var newEleveModel = new EleveDetailViewModel{
+                Eleve = model
+            };
             if (model == null)
             {
                 return NotFound($"On a pas trouvé d'eleve avec l'id {id}");
             }
-            return View(model);
+            return View(newEleveModel);
+        }
+        [HttpPost]
+        public IActionResult test(Eleve eleve)
+        {
+            if (ModelState.IsValid)
+            {
+                Eleve updateEleve = db.Eleves.First(eleve => eleve.EleveID == eleve.EleveID);
+            }
+            var newEleveModel = new EleveDetailViewModel{
+                Eleve = eleve
+            };
+            return View("EleveDetail",newEleveModel);
         }
 
         // [HttpPost]
-        // public IActionResult ModifyDetailEleve()
+        // public IActionResult ModifyDetailEleve(Eleve eleve)
         // {
-        //     if(ModelState.IsValid)
-        //     {
-
-        //     }
+        //     var id =  eleve.EleveID;
+        //     // if(ModelState.IsValid)
+        //     // {
+        //     // }
+        //     return View("EleveDetail");
         // }
     }
 }
