@@ -14,35 +14,35 @@
         <legend>Détail de l'élève</legend>
         <div class="mb-3">
             <label for="nom" class="form-label">Nom :</label>
-            <input type="text" id="nom" class="form-control" asp-for="Eleve.EleveNom" name="EleveNom" placeholder="@Model.Eleve.EleveNom">
+            <input required type="text" id="nom" class="form-control" asp-for="Eleve.EleveNom" value="@Model.Eleve.EleveNom">
         </div>
         <div class="mb-3">
             <label for="prenom" class="form-label">Prenom :</label>
-            <input type="text" id="prenom" class="form-control" asp-for="Eleve.ElevePrenom" name="ElevePrenom" placeholder="@Model.Eleve.ElevePrenom">
+            <input required type="text" id="prenom" class="form-control" asp-for="Eleve.ElevePrenom" value="@Model.Eleve.ElevePrenom">
         </div>
         <div class="mb-3">
             <label for="sexe" class="form-label">Sexe :</label>
-            <select class="form-control" asp-for="Eleve.EleveSexe" name="EleveSexe" id="sexe">
+            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe">
                 <option>@Model.Eleve.EleveSexe</option>
-                <option>H</option>
-                <option>F</option>
+                <option value="H">H</option>
+                <option value="F">F</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="adresse" class="form-label">Adresse :</label>
-            <input type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse" name="EleveAdresse" placeholder="@Model.Eleve.EleveAdresse">
+            <input required type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse" value="@Model.Eleve.EleveAdresse">
         </div>
         <div class="mb-3">
             <label for="code_postale" class="form-label">Code postale :</label>
-            <input type="text" id="code_postale" class="form-control" asp-for="Eleve.EleveCodePostal" name="EleveCodePostal" placeholder="@Model.Eleve.EleveCodePostal">
+            <input required type="text" id="code_postale" class="form-control" asp-for="Eleve.EleveCodePostal" value="@Model.Eleve.EleveCodePostal">
         </div>
         <div class="mb-3">
             <label for="ville" class="form-label">Ville :</label>
-            <input type="text" id="ville" class="form-control" asp-for="Eleve.EleveVille" name="EleveVille" placeholder="@Model.Eleve.EleveVille">
+            <input required type="text" id="ville" class="form-control" asp-for="Eleve.EleveVille" value="@Model.Eleve.EleveVille">
         </div>
         <div class="mb-3">
             <label for="telephone" class="form-label">Telephone :</label>
-            <input type="text" id="telephone" class="form-control" asp-for="Eleve.EleveTelephone" name="EleveTelephone" placeholder="@Model.Eleve.EleveTelephone">
+            <input required type="text" id="telephone" class="form-control" asp-for="Eleve.EleveTelephone" value="@Model.Eleve.EleveTelephone">
         </div>
         <input type="submit" value="enregistrer" id="btn_enregistrer" style="display: none;">
     </fieldset>
