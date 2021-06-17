@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using GestionClasseMvc.Models;
 using Ifinfo.Shared;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+// using System.Linq;
 
 namespace GestionClasseMvc.Controllers
 {
@@ -47,21 +47,33 @@ namespace GestionClasseMvc.Controllers
 
         public IActionResult ListeEleve(long? id)
         {
-            if(!id.HasValue)
+            if (!id.HasValue)
             {
                 return NotFound("MET UN ID STP");
             }
             var ev = new EleveViewModel();
 
-                var model = db.Eleves.Where(e => e.ClasseID == id).ToList();
-                ev.Eleves = model;
-                if(model == null)
-                {
-                    return NotFound("Aucuns élèves trouvés");         
-                }
-            
-            
+            var model = db.Eleves.Where(e => e.ClasseID == id).ToList();
+            ev.Eleves = model;
+            ev.Classe = db.Classes.SingleOrDefault(c => c.ClasseID == id);
+            if (model == null)
+            {
+                return NotFound("Aucuns élèves trouvés");
+            }
             return View(ev);
+        }
+        public IActionResult EleveDetail(long? id)
+        {
+            if (!id.HasValue)
+            {
+                return NotFound("Mettez un id dans url");
+            }
+            var model = db.Eleves.SingleOrDefault(e => e.EleveID == id);
+            if (model == null)
+            {
+                return NotFound($"On a pas trouvé d'eleve avec l'id {id}");
+            }
+            return View(model);
         }
     }
 }

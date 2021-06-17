@@ -1,0 +1,48 @@
+@using Ifinfo.Shared
+@{
+    ViewData["Title"] = "Eleves Page";
+}
+<div class="text-center">
+    <h1 class="display-4">@Model.EleveNom @Model.ElevePrenom</h1>
+</div>
+<hr />
+
+<form method="POST" style="width: 300px;">
+    <fieldset id="field" class="" disabled>
+        <legend>Détail de l'élève</legend>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom :</label>
+            <input type="text" id="nom" class="form-control" placeholder="@Model.EleveNom">
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prenom :</label>
+            <input type="text" id="prenom" class="form-control" placeholder="@Model.ElevePrenom">
+        </div>
+        <div class="mb-3">
+            <label for="sexe" class="form-label">Sexe :</label>
+            <select class="form-control" id="sexe">
+                <option>@Model.EleveSexe</option>
+                <option>Homme</option>
+                <option>Femme</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="adresse" class="form-label">Adresse :</label>
+            <input type="text" id="adresse" class="form-control" placeholder="@Model.EleveAdresse">
+        </div>
+        <div class="mb-3">
+            <label for="code_postale" class="form-label">Code postale :</label>
+            <input type="text" id="code_postale" class="form-control" placeholder="@Model.EleveCodePostal">
+        </div>
+        <div class="mb-3">
+            <label for="ville" class="form-label">Ville :</label>
+            <input type="text" id="ville" class="form-control" placeholder="@Model.EleveVille">
+        </div>
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Telephone :</label>
+            <input type="text" id="telephone" class="form-control" placeholder="@Model.EleveTelephone">
+        </div>
+        <input type="submit" value="enregistrer" id="btn_enregistrer" style="display: none;">
+    </fieldset>
+    <button type="button" id="btn_modify" onclick="OnModify()" class="btn btn-primary">modifier</button>
+</form>

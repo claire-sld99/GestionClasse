@@ -1,10 +1,11 @@
 @model GestionClasseMvc.Models.EleveViewModel
+@using Ifinfo.Shared
 @{
     ViewData["Title"] = "Eleves Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Gestion des Elèves</h1>
+    <h1 class="display-4"> Classe @Model.Classe.ClasseNom</h1>
 </div>
 
 <hr>
@@ -13,8 +14,27 @@
     @foreach (var item in Model.Eleves)
     {
         <li class="list-item-group">
-            <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID">@item.EleveNom  @item.ElevePrenom</a>
+            <a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@item.EleveID">@item.EleveNom  @item.ElevePrenom</a>
         </li>
     }
     </ul>
+</div>
+<div class="row" style="align-items: center;">
+    <table class="table" style="width: 500px;">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Eleve eleve in Model.Eleves)
+            {
+                <tr>
+                    <td><a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID">@eleve.EleveNom </a></td>
+                    <td><a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID">@eleve.ElevePrenom</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
