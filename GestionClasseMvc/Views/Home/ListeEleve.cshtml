@@ -20,7 +20,7 @@
 <div class="row text-center mx-auto">
 @foreach (Eleve eleve in Model.Eleves)
 {
-    <div class="col-sm-4 mb-3">
+    <div class="col-sm-3 mb-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@eleve.ElevePrenom <strong>@eleve.EleveNom</strong></h5>
@@ -31,3 +31,10 @@
     </div>
 }
 </div>
+
+@*AFFICHAGE EVALUATION*@
+<div class="text-center">
+    <h1 class="display-4"> Evaluation Classe @Model.Classe.ClasseNom</h1>
+    <a  asp-controller="Home" asp-action="AjoutEvaluation" class="btn btn-success">Ajout d'une évaluation ici</a>
+</div>
+
