@@ -10,22 +10,24 @@
 
 <hr>
 
-<div class="row" style="align-items: center;">
-    <table class="table" style="width: 500px;">
-        <thead class="thead-inverse">
-            <tr>
-                <th>Nom</th>
-                <th>Prenom</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Eleve eleve in Model.Eleves)
-            {
-                <tr>
-                    <td><a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID">@eleve.EleveNom </a></td>
-                    <td><a asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID">@eleve.ElevePrenom</a></td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Classe @Model.Classe.ClasseNom</li>
+  </ol>
+</nav>
+
+<div class="row text-center mx-auto">
+@foreach (Eleve eleve in Model.Eleves)
+{
+    <div class="col-sm-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@eleve.ElevePrenom @eleve.EleveNom</h5>
+                <hr>
+                <a  asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID" class="btn btn-secondary">Voir l'élève</a>
+            </div>
+        </div>
+    </div>
+}
 </div>
