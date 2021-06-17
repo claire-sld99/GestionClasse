@@ -4,8 +4,10 @@
 // Write your JavaScript code.
 function OnModify() {
     var btnSave = document.querySelector("#btn_enregistrer");
-    var btnCancel = document.querySelector("#field");
+    var field = document.querySelector("#field");
+    var btn_modify = document.querySelector("#btn_modify");
 
-    btnCancel.setAttribute("disabled", "false")
-    btnSave.setAttribute("style", "display: block;")
+    field.removeAttribute("disabled");
+    btnSave.setAttribute("style", "display: block;");
+    btn_modify.setAttribute("style", "display: none;");
 }
