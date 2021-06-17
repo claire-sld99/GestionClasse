@@ -1,5 +1,5 @@
 @using Ifinfo.Shared
-@model EleveDetailViewModel
+@model GestionClasseMvc.Models.EleveDetailViewModel
 @{
     ViewData["Title"] = "Eleves Page";
 }
@@ -7,6 +7,15 @@
     <h1 class="display-4">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</h1>
 </div>
 <hr />
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@Model.Eleve.ClasseID">Classe @Model.Eleve.ClasseID</a></li>
+    <li class="breadcrumb-item active" aria-current="page">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</li>
+  </ol>
+</nav>
+
 
 <form asp-controller="Home" asp-action="test" method="POST" style="width: 300px;">
     <input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>
