@@ -8,6 +8,7 @@
 </div>
 <hr />
 
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
@@ -17,7 +18,8 @@
 </nav>
 
 
-<form asp-controller="Home" asp-action="test" method="POST" style="width: 300px;">
+
+<form asp-controller="Home" asp-action="ModifyEleve" method="POST" style="width: 300px;">
     <input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>
     <fieldset id="field" disabled="true">
         <legend>Détail de l'élève</legend>
@@ -37,6 +39,15 @@
                 <option value="F">F</option>
             </select>
         </div>
+        @* <div class="mb-3">
+            <label for="sexe" class="form-label">Sexe :</label>
+            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe">
+                @foreach (var item in )
+                {
+                    
+                }
+            </select>
+        </div> *@
         <div class="mb-3">
             <label for="adresse" class="form-label">Adresse :</label>
             <input required type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse" value="@Model.Eleve.EleveAdresse">
