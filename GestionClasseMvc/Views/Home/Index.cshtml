@@ -4,15 +4,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Gestion de Classes</h1> 
+    <h1 class="display-4">Gestion de Classes</h1>
     <p>Le site pour gérer vos classes</p>
 </div>
 
 <hr>
-<div class="text-center">
+<div class="text-center row">
     @foreach (var item in Model.Classes)
     {
-        <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID" class="btn btn-primary">Classe @item.ClasseNom </a>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Classe @item.ClasseNom</h5>
+                    <p class="card-text"><strong>Niveau de la classe :</strong> @item.ClasseNiveau </p>
+                    <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID" class="btn btn-outline-secondary">Voir la classe</a>
+                </div>
+            </div>
+        </div>
     }
 
 </div>
