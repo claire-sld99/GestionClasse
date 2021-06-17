@@ -6,3 +6,26 @@
     <h1 class="display-4">Rajout d'une évaluation</h1>
 </div>
 <hr />
+<form asp-controller="Home" asp-action="AjoutEval" method="POST" style="width: 300px;">
+    @*<input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>*@
+    
+        <legend>Renseigner chaque champ pour l'évaluation</legend>
+        <div class="mb-3">
+            <label for="libelle" class="form-label">Nom de l'évaluation : </label>
+            <input type="text" id="libelle" class="form-control" name="">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date de l'évaluation : </label>
+            <div class="datepicker date input-group">
+            <input type="text" id="date" placeholder="Choisir une date" class="form-control" name="">
+            <div class="input-group-append">
+                <span class="input-group-text px-4"><i class="fa fa-calendar"></i></span>
+            </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="matiere" class="form-label">Matière : </label>
+            <input type="text" id="matiere" class="form-control" name="">
+        </div>
+        <input type="submit" value="Ajouter" id="btn_ajouter">
+</form>
