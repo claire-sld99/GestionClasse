@@ -2,6 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
 function OnModify() {
     var btnSave = document.querySelector("#btn_enregistrer");
     var field = document.querySelector("#field");
@@ -10,4 +12,4 @@ function OnModify() {
     field.removeAttribute("disabled");
     btnSave.setAttribute("style", "display: block;");
     btn_modify.setAttribute("style", "display: none;");
-}
+};
