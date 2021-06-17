@@ -4,8 +4,8 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Gestion de Classes</h1>
-    <p>Le site pour gérer vos classes</p>
+    <h1 class="display-4"><i class="fas fa-dragon"></i> Gestion de Classes <i class="fas fa-dragon"></i></h1>
+    <p>Le site pour gérer vos classes <i class="fas fa-book"></i></p>
 </div>
 
 <hr>
@@ -15,7 +15,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Classe @item.ClasseNom</h5>
+                    <h5 class="card-title"> Classe @item.ClasseNom <i class="fas fa-bookmark"></i></h5>
                     <p class="card-text"><strong>Niveau de la classe :</strong> @item.ClasseNiveau </p>
                     <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID" class="btn btn-outline-secondary">Voir la classe</a>
                 </div>

@@ -16,7 +16,7 @@ namespace GestionClasseMvc.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private GestionClasse db;
-        public Eleve eleve1 { get; set; }
+        public IEnumerable<Classe> Classes { get; set; }
 
         public HomeController(ILogger<HomeController> logger, GestionClasse injectedContext)
         {
@@ -82,7 +82,7 @@ namespace GestionClasseMvc.Controllers
         }
 
         [HttpPost]
-        public IActionResult test(Eleve eleve)
+        public IActionResult ModifyEleve(Eleve eleve)
         {
             if (ModelState.IsValid)
             {
@@ -98,16 +98,6 @@ namespace GestionClasseMvc.Controllers
             }
             return View("test");
         }
-
-        // [HttpPost]
-        // public IActionResult ModifyDetailEleve(Eleve eleve)
-        // {
-        //     var id =  eleve.EleveID;
-        //     // if(ModelState.IsValid)
-        //     // {
-        //     // }
-        //     return View("EleveDetail");
-        // }
 
         public IActionResult AjoutEvaluation()
         {
