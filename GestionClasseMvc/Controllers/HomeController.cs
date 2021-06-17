@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using GestionClasseMvc.Models;
 using Ifinfo.Shared;
 using Microsoft.EntityFrameworkCore;
-// using System.Linq;
+//using System.Linq;
 
 namespace GestionClasseMvc.Controllers
 {
@@ -108,5 +108,10 @@ namespace GestionClasseMvc.Controllers
         //     // }
         //     return View("EleveDetail");
         // }
+
+        public IActionResult AjoutEvaluation()
+        {
+            return View();
+        }
     }
 }
