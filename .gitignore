@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#dll qui pose soucis
+GestionClasseMvc.dll
+GestionClasseMvc.Views.dll
+
+
 # User-specific files
 *.rsuser
 *.suo

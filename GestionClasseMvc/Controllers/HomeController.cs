@@ -75,5 +75,14 @@ namespace GestionClasseMvc.Controllers
             }
             return View(model);
         }
+
+        // [HttpPost]
+        // public IActionResult ModifyDetailEleve()
+        // {
+        //     if(ModelState.IsValid)
+        //     {
+
+        //     }
+        // }
     }
 }
