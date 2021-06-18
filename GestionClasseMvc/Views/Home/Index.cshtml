@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title"> Classe @item.ClasseNom <i class="fas fa-bookmark"></i></h5>
                     <p class="card-text"><strong>Niveau de la classe :</strong> @item.ClasseNiveau </p>
-                    <a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@item.ClasseID" class="btn btn-outline-secondary">Voir la classe</a>
+                    <a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@item.ClasseID" class="btn btn-outline-secondary">Voir la classe</a>
                 </div>
             </div>
         </div>

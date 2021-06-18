@@ -20,14 +20,14 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
-    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@Model.Eleve.ClasseID">Classe @nomClasse</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@Model.Eleve.ClasseID">Classe @nomClasse</a></li>
     <li class="breadcrumb-item active" aria-current="page">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</li>
   </ol>
 </nav>
 
 
 
-<form asp-controller="Home" asp-action="ModifyEleve" method="POST" style="width: 300px;">
+<form asp-controller="Eleve" asp-action="ModifyEleve" method="POST" style="width: 300px;">
     <input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>
     <fieldset id="field" disabled="true">
         <legend>Détail de l'élève</legend>

@@ -7,6 +7,9 @@ namespace GestionClasseMvc.Models
      {
          public Evaluation Evaluation {get;set;}
 
+         public Eleve Eleve { get; set; }
+        public Classe Classes { get; set; }
+
         public IEnumerable<string> ValidationMessages {get; set;}
 
         public bool HasMessages {get; set;}

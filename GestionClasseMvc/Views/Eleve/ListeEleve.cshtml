@@ -26,7 +26,7 @@
             <div class="card-body">
                 <h5 class="card-title">@eleve.ElevePrenom <strong>@eleve.EleveNom <i class="fas fa-user"></i></strong></h5>
                 <hr>
-                <a  asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID" class="btn btn-secondary">Voir l'élève</a>
+                <a  asp-controller="Eleve" asp-action="EleveDetail" asp-route-id="@eleve.EleveID" class="btn btn-secondary">Voir l'élève</a>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
 @*AJOUT EVALUATION*@
 <div class="text-center mb-3">
     <h1 class="display-4"> Evaluation Classe @Model.Classe.ClasseNom</h1>
-    <a  asp-controller="Home" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajouter une évaluation <i class="fas fa-award"></i></a>
+    <a  asp-controller="Evaluation" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajouter une évaluation <i class="fas fa-award"></i></a>
 </div>
 
 @*AFFICHAGE EVALUATION*@
