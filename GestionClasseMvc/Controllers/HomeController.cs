@@ -56,6 +56,7 @@ namespace GestionClasseMvc.Controllers
 
             var model = db.Eleves.Where(e => e.ClasseID == id).OrderBy(i => i.EleveNom).ToList();
             ev.Eleves = model;
+            ev.Classe = db.Classes.SingleOrDefault(c => c.ClasseID == id);
             if (model == null)
             {
                 return NotFound("Aucuns élèves trouvés");
