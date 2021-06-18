@@ -13,3 +13,9 @@ function OnModify() {
     btnSave.setAttribute("style", "display: block;");
     btn_modify.setAttribute("style", "display: none;");
 };
+
+var form = document.querySelector("form#formAjoutEval");
+
+form.addEventListener("submit", () => {
+    reset(form);
+});
