@@ -1,5 +1,6 @@
 @model GestionClasseMvc.Models.EleveViewModel
 @using Ifinfo.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Eleves Page";
 }
@@ -23,7 +24,7 @@
     <div class="col-sm-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@eleve.ElevePrenom <strong>@eleve.EleveNom</strong></h5>
+                <h5 class="card-title">@eleve.ElevePrenom <strong>@eleve.EleveNom <i class="fas fa-user"></i></strong></h5>
                 <hr>
                 <a  asp-controller="Home" asp-action="EleveDetail" asp-route-id="@eleve.EleveID" class="btn btn-secondary">Voir l'élève</a>
             </div>
@@ -35,6 +36,6 @@
 @*AFFICHAGE EVALUATION*@
 <div class="text-center">
     <h1 class="display-4"> Evaluation Classe @Model.Classe.ClasseNom</h1>
-    <a  asp-controller="Home" asp-action="AjoutEvaluation" class="btn btn-success">Ajout d'une évaluation ici</a>
+    <a  asp-controller="Home" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajout d'une évaluation ici</a>
 </div>
 
