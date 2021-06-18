@@ -2,6 +2,14 @@
 @model GestionClasseMvc.Models.EleveDetailViewModel
 @{
     ViewData["Title"] = "Eleves Page";
+    string nomClasse = "";
+    foreach (var item in Model.Classes)
+    {
+        if (item.ClasseID == Model.Eleve.ClasseID )
+        {
+            nomClasse = item.ClasseNom;
+        }
+    }
 }
 <div class="text-center">
     <h1 class="display-4">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</h1>
@@ -12,7 +20,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
-    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@Model.Eleve.ClasseID">Classe @Model.Eleve.ClasseID</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="ListeEleve" asp-route-id="@Model.Eleve.ClasseID">Classe @nomClasse</a></li>
     <li class="breadcrumb-item active" aria-current="page">@Model.Eleve.EleveNom @Model.Eleve.ElevePrenom</li>
   </ol>
 </nav>
