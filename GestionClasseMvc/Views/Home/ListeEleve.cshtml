@@ -48,9 +48,9 @@
       <div class="card-body">
         <h5 class="card-title">@evaluation.EvaluationLibelle</h5>
         <p class="card-text">
-            <strong>Matière :</strong> @evaluation.EvaluationMatiere,
-            <br><strong> Date :</strong> @evaluation.EvaluationDate,
-            <br><strong>Classe :</strong> @evaluation.Classe.ClasseNom,
+            <strong>Matière :</strong> @evaluation.EvaluationMatiere
+            <br><strong> Date :</strong> @evaluation.EvaluationDate.ToString("dd/MM/yyyy")
+            <br><strong>Classe :</strong> @evaluation.Classe.ClasseNom
             <br><strong>Professeur :</strong> @evaluation.Professeur.ProfesseurPrenom <span class="text-uppercase">@evaluation.Professeur.ProfesseurNom</span>
         </p>
       </div>
