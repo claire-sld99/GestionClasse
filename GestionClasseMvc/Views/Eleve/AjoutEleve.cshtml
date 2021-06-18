@@ -12,14 +12,14 @@
  <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
-    <li class="breadcrumb-item"><a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@Model.Classes.ClasseID">Classe @Model.Classes.ClasseNom</a></li>
+    @* <li class="breadcrumb-item"><a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@Model.Classes.ClasseID">Classe @Model.Classes.ClasseNom</a></li> *@
     <li class="breadcrumb-item active" aria-current="page">Ajout Élève</li>
   </ol>
 </nav>
 
 
 <div class="text-center">
-<form asp-controller="Eleve" asp-action="AjoutEleve" method="POST" style="width: 300px;" class="mx-auto">
+<form class="formAjout mx-auto" asp-controller="Eleve" asp-action="AjoutEleve" method="POST" style="width: 300px;" >
         <div class="mb-3">
             <label for="nom" class="form-label">Nom :</label>
             <input required type="text" id="nom" class="form-control" asp-for="Eleve.EleveNom">
@@ -51,7 +51,7 @@
             <label for="telephone" class="form-label">Telephone :</label>
             <input required type="text" id="telephone" class="form-control" asp-for="Eleve.EleveTelephone">
         </div>
-        <input type="submit" value="Ajouter" class="btn btn-success">
+        <input type="submit" value="Ajouter" class="btn btn-secondary">
 </form>
 </div>
 <br>

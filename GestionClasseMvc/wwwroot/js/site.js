@@ -15,7 +15,7 @@ function OnModify() {
 };
 
 //Evenement qui réinitialise les champs du formulaire lorsqu'on ajoute une évaluation
-var form = document.querySelector("form#formAjoutEval");
+var form = document.querySelector(".formAjout");
 
 form.addEventListener("submit", () => {
     reset(form);
