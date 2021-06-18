@@ -13,16 +13,16 @@
     <legend>Renseigner chaque champ pour l'évaluation</legend>
     <div class="mb-3">
         <label for="libelle" class="form-label">Nom de l'évaluation : </label>
-        <input type="text" id="libelle" class="form-control" asp-for="Evaluation.EvaluationLibelle" value="">
+        <input type="text" id="libelle" class="form-control" asp-for="Evaluation.EvaluationLibelle" value="" required>
     </div>
     <div class="mb-3">
         <label for="date" class="form-label">Date de l'évaluation : </label>
         <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
-            asp-for="Evaluation.EvaluationDate" value="">
+            asp-for="Evaluation.EvaluationDate" value="" required>
     </div>
     <div class="mb-3">
         <label for="matiere" class="form-label">Matière : </label>
-        <input type="text" id="matiere" class="form-control" asp-for="Evaluation.EvaluationMatiere" value="">
+        <input type="text" id="matiere" class="form-control" asp-for="Evaluation.EvaluationMatiere" value="" required>
     </div>
     <input type="submit" value="Ajouter" class="btn btn-secondary" id="btn_ajouter" >
 </form>
