@@ -6,6 +6,10 @@ namespace GestionClasseMvc.Models
      public class AjoutEvaluationViewModel
      {
          public Evaluation Evaluation {get;set;}
+
+        public IEnumerable<string> ValidationMessages {get; set;}
+
+        public bool HasMessages {get; set;}
          
      }
 }
