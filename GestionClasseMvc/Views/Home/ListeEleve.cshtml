@@ -33,9 +33,28 @@
 }
 </div>
 
-@*AFFICHAGE EVALUATION*@
-<div class="text-center">
+@*AJOUT EVALUATION*@
+<div class="text-center mb-3">
     <h1 class="display-4"> Evaluation Classe @Model.Classe.ClasseNom</h1>
-    <a  asp-controller="Home" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajout d'une évaluation ici</a>
+    <a  asp-controller="Home" asp-action="AjoutEvaluation" asp-route-id="@Model.Classe.ClasseID" class="btn btn-success">Ajouter une évaluation</a>
 </div>
 
+@*AFFICHAGE EVALUATION*@
+<div class="row">
+@foreach (Evaluation evaluation in Model.Evaluations)
+{ 
+  <div class="col-sm-4 mb-2">
+    <div class="card shadow p-3 mb-5 bg-body rounded border-secondary">
+      <div class="card-body">
+        <h5 class="card-title">@evaluation.EvaluationLibelle</h5>
+        <p class="card-text">
+            <strong>Matière :</strong> @evaluation.EvaluationMatiere,
+            <br><strong> Date :</strong> @evaluation.EvaluationDate,
+            <br><strong>Classe :</strong> @evaluation.Classe.ClasseNom,
+            <br><strong>Professeur :</strong> @evaluation.Professeur.ProfesseurPrenom <span class="text-uppercase">@evaluation.Professeur.ProfesseurNom</span>
+        </p>
+      </div>
+    </div>
+  </div>
+}
+</div>

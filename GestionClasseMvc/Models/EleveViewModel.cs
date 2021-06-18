@@ -7,5 +7,9 @@ namespace GestionClasseMvc.Models
     {
         public Classe Classe { get; set; }
         public IList<Eleve> Eleves { get; set; }
+
+        public IList<Evaluation> Evaluations {get; set;}
+
+        public IList<Professeur> Professeurs {get; set;}
     }
 }
