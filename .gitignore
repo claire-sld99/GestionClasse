@@ -6,6 +6,7 @@
 #dll qui pose soucis
 GestionClasseMvc.dll
 GestionClasseMvc.Views.dll
+GestionClasse.db
 
 
 # User-specific files

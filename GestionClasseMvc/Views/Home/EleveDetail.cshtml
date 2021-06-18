@@ -33,21 +33,21 @@
         </div>
         <div class="mb-3">
             <label for="sexe" class="form-label">Sexe :</label>
-            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe">
+            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe" required>
                 <option>@Model.Eleve.EleveSexe</option>
-                <option value="H">H</option>
-                <option value="F">F</option>
+                <option value="H">Homme</option>
+                <option value="F">Femme</option>
             </select>
         </div>
-        @* <div class="mb-3">
-            <label for="sexe" class="form-label">Sexe :</label>
-            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe">
-                @foreach (var item in )
+        <div class="mb-3">
+            <label for="classe" class="form-label">Classe :</label>
+            <select class="form-control" asp-for="Eleve.ClasseID"  id="classe">
+                @foreach (Classe item in Model.Classes)
                 {
-                    
+                    <option value="@item.ClasseID">Classe @item.ClasseNom</option>
                 }
             </select>
-        </div> *@
+        </div>
         <div class="mb-3">
             <label for="adresse" class="form-label">Adresse :</label>
             <input required type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse" value="@Model.Eleve.EleveAdresse">
