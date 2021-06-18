@@ -1,0 +1,70 @@
+@using Ifinfo.Shared
+@model GestionClasseMvc.Models.AjoutEleveViewModel
+@{
+    ViewData["Title"] = "Ajout Éleves Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Ajouter un élève</h1>
+</div>
+<hr />
+
+
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@Model.Classes.ClasseID">Classe @Model.Classes.ClasseNom</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Ajout Élève</li>
+  </ol>
+</nav>
+
+
+<div class="text-center">
+<form asp-controller="Eleve" asp-action="AjoutEleve" method="POST" style="width: 300px;" class="mx-auto">
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom :</label>
+            <input required type="text" id="nom" class="form-control" asp-for="Eleve.EleveNom">
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prenom :</label>
+            <input required type="text" id="prenom" class="form-control" asp-for="Eleve.ElevePrenom">
+        </div>
+        <div class="mb-3">
+            <label for="sexe" class="form-label">Sexe :</label>
+            <select class="form-control" asp-for="Eleve.EleveSexe" id="sexe" required>
+                <option value="H">Homme</option>
+                <option value="F">Femme</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="adresse" class="form-label">Adresse :</label>
+            <input required type="text" id="adresse" class="form-control" asp-for="Eleve.EleveAdresse">
+        </div>
+        <div class="mb-3">
+            <label for="code_postale" class="form-label">Code postale :</label>
+            <input required type="text" id="code_postale" class="form-control" asp-for="Eleve.EleveCodePostal">
+        </div>
+        <div class="mb-3">
+            <label for="ville" class="form-label">Ville :</label>
+            <input required type="text" id="ville" class="form-control" asp-for="Eleve.EleveVille">
+        </div>
+        <div class="mb-3">
+            <label for="telephone" class="form-label">Telephone :</label>
+            <input required type="text" id="telephone" class="form-control" asp-for="Eleve.EleveTelephone">
+        </div>
+        <input type="submit" value="Ajouter" class="btn btn-success">
+</form>
+</div>
+<br>
+@if (Model.ValidationMessages != null)
+{
+    @if (Model.ValidationMessages.Count() > 0)
+    {
+        <div>
+            @foreach (string successMessage in Model.ValidationMessages)
+            {
+                <div class="alert alert-success" role="alert">@successMessage</div>
+            }
+        </div>
+    }
+
+}

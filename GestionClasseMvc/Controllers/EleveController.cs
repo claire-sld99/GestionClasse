@@ -77,6 +77,40 @@ namespace GestionClasseMvc.Controllers
             }
             return View("test");
         }
+
+        public IActionResult AjoutEleve(long? id)
+        {
+            if(id.HasValue)
+            {
+                var model = new AjoutEleveViewModel{
+                    Classes = db.Classes.SingleOrDefault(c => c.ClasseID == id)
+                };
+                return View(model);
+            }
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult AjoutEleve(long id, Eleve eleve)
+        {
+            if(ModelState.IsValid)
+            {
+                List<string> messages = new List<string>();
+                eleve.EleveID = db.Eleves.Count()+1;
+                eleve.ClasseID = id;
+                db.Eleves.Add(eleve);
+                var affected = db.SaveChanges();
+                if(affected == 1){
+                    var model = new AjoutEleveViewModel();
+                    messages.Add("L'élève à bien été ajoutée !");
+                    model.ValidationMessages = messages;
+                return View(model);
+                }
+
+            }
+            return View();
+        }
     
     }
 }
