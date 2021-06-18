@@ -7,27 +7,38 @@
     <h1 class="display-4">Rajout d'une évaluation</h1>
 </div>
 <hr />
-<form id="formAjoutEval" asp-controller="Home" asp-action="AjoutEvaluation" method="POST" style="width: 300px;">
+
+ <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="">Home</a></li>
+    <li class="breadcrumb-item"><a asp-controller="Eleve" asp-action="ListeEleve" asp-route-id="@Model.Classes.ClasseID">Classe @Model.Classes.ClasseNom</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Ajout Évaluation</li>
+  </ol>
+</nav>
+
+<form id="formAjoutEval" asp-controller="Evaluation" asp-action="AjoutEvaluation" method="POST" style="width: 300px;">
     @*<input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>*@
 
     <legend>Renseigner chaque champ pour l'évaluation</legend>
     <div class="mb-3">
         <label for="libelle" class="form-label">Nom de l'évaluation : </label>
-        <input type="text" id="libelle" class="form-control" asp-for="Evaluation.EvaluationLibelle" value="">
+        <input type="text" id="libelle" class="form-control" asp-for="Evaluation.EvaluationLibelle" value="" required>
     </div>
     <div class="mb-3">
         <label for="date" class="form-label">Date de l'évaluation : </label>
         <input type="date" placeholder="Choisir une date" class="form-control" id="reservationDate"
-            asp-for="Evaluation.EvaluationDate" value="">
+            asp-for="Evaluation.EvaluationDate" value="" required>
     </div>
     <div class="mb-3">
         <label for="matiere" class="form-label">Matière : </label>
-        <input type="text" id="matiere" class="form-control" asp-for="Evaluation.EvaluationMatiere" value="">
+        <input type="text" id="matiere" class="form-control" asp-for="Evaluation.EvaluationMatiere" value="" required>
     </div>
     <input type="submit" value="Ajouter" class="btn btn-secondary" id="btn_ajouter" >
 </form>
-@if (Model != null)
+<br>
+@if (Model.ValidationMessages != null)
 {
+
 
 
     @if (Model.ValidationMessages.Count() > 0)
