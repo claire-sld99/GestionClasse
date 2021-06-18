@@ -56,7 +56,6 @@ namespace GestionClasseMvc.Controllers
 
             var model = db.Eleves.Where(e => e.ClasseID == id).OrderBy(i => i.EleveNom).ToList();
             ev.Eleves = model;
-            ev.Classe = db.Classes.SingleOrDefault(c => c.ClasseID == id);
             if (model == null)
             {
                 return NotFound("Aucuns élèves trouvés");
@@ -69,12 +68,14 @@ namespace GestionClasseMvc.Controllers
             {
                 return NotFound("Mettez un id dans url");
             }
-            var model = db.Eleves.SingleOrDefault(e => e.EleveID == id);
+            var eleve = db.Eleves.SingleOrDefault(e => e.EleveID == id);
+            var classes = db.Classes;
             var newEleveModel = new EleveDetailViewModel
             {
-                Eleve = model
+                Eleve = eleve,
+                Classes = classes
             };
-            if (model == null)
+            if (eleve == null)
             {
                 return NotFound($"On a pas trouvé d'eleve avec l'id {id}");
             }
