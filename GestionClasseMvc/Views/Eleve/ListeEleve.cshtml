@@ -59,6 +59,7 @@
             <br><strong> Date :</strong> @evaluation.EvaluationDate.ToString("dd/MM/yyyy")
             <br><strong>Classe :</strong> @evaluation.Classe.ClasseNom
             <br><strong>Professeur :</strong> @evaluation.Professeur.ProfesseurPrenom <span class="text-uppercase">@evaluation.Professeur.ProfesseurNom</span>
+            <br><a  asp-controller="Evaluation" asp-action="DetailEvaluation" asp-route-id="@evaluation.EvaluationID" class="btn btn-secondary">Détails de l'évaluation<i class="fas fa-award"></i></a>
         </p>
       </div>
     </div>

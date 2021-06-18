@@ -1,0 +1,30 @@
+@model GestionClasseMvc.Models.DetailEvaluationViewModel
+@using Ifinfo.Shared
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Detail Evaluation Page";
+}
+<div class="row">
+    <div class="col-sm-6  border border-secondary shadow p-3 mb-5 bg-white rounded">
+        <h2>Evaluation détails</h2>
+        <p>
+            <strong>Libellé :</strong> @Model.Evaluation.EvaluationLibelle <br>
+            <strong>Date :</strong> @Model.Evaluation.EvaluationDate.ToString("dd/MM/yyyy")<br>
+            <strong>Matière :</strong> @Model.Evaluation.EvaluationMatiere
+        </p>
+        <button type="button" id="btn_modifyEval" onclick="OnModifyEval()" class="btn btn-primary">Modifier</button>
+    </div>
+
+<form>
+    <fieldset id="fieldEval" disabled>
+    <ul class="list-group col-sm-6">
+        @foreach (Eleve eleve in Model.Eleves)
+        {
+            <li class="list-group-item d-flex justify-content-between">@eleve.ElevePrenom @eleve.EleveNom <input type="text"> </li>
+        }
+    </ul>
+    </fieldset>
+</form>
+
+
+</div>

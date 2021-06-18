@@ -20,3 +20,9 @@ var form = document.querySelector("form#formAjoutEval");
 form.addEventListener("submit", () => {
     reset(form);
 });
+
+function OnModifyEval() {
+    var fieldEval = document.querySelector("#fieldEval");
+
+    fieldEval.removeAttribute("disabled");
+}

@@ -23,9 +23,10 @@ namespace GestionClasseMvc.Controllers
 
         public IActionResult AjoutEvaluation(long? id)
         {
-            if(id.HasValue)
+            if (id.HasValue)
             {
-                var model = new AjoutEvaluationViewModel{
+                var model = new AjoutEvaluationViewModel
+                {
                     Classes = db.Classes.SingleOrDefault(c => c.ClasseID == id)
                 };
                 return View(model);
@@ -37,23 +38,41 @@ namespace GestionClasseMvc.Controllers
         public IActionResult AjoutEvaluation(long id, Evaluation evaluation)
         {
             var rand = new Random();
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 List<string> messages = new List<string>();
-                evaluation.ProfesseurID = rand.Next(1, db.Professeurs.Count()+1);
-                evaluation.EvaluationID = db.Evaluations.Count()+1;
+                evaluation.ProfesseurID = rand.Next(1, db.Professeurs.Count() + 1);
+                evaluation.EvaluationID = db.Evaluations.Count() + 1;
                 evaluation.ClasseID = id;
                 db.Evaluations.Add(evaluation);
                 var affected = db.SaveChanges();
-                if(affected == 1){
+                if (affected == 1)
+                {
                     var model = new AjoutEvaluationViewModel();
                     messages.Add("L'évaluation à bien été créé !");
                     model.ValidationMessages = messages;
-                return View(model);
+                    return View(model);
                 }
 
             }
             return View();
+        }
+
+        public IActionResult DetailEvaluation(long? id)
+        {
+            if (id.HasValue)
+            {
+                var model = new DetailEvaluationViewModel
+                {
+                    Evaluation = db.Evaluations.SingleOrDefault(e => e.EvaluationID == id),
+                    Eleves = db.Eleves.Where(e => e.ClasseID == db.Evaluations.SingleOrDefault(e => e.EvaluationID == id).ClasseID)
+                };
+                return View(model);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
     }
