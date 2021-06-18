@@ -110,7 +110,7 @@ namespace GestionClasseMvc.Controllers
              if(ModelState.IsValid)
              {
                  db.Evaluations.Add(evaluation);
-                db.SaveChanges();
+                 db.SaveChanges();
              }
             return View();
         }
