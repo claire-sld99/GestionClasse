@@ -7,7 +7,7 @@
     <h1 class="display-4">Rajout d'une évaluation</h1>
 </div>
 <hr />
-<form asp-controller="Home" asp-action="AjoutEvaluation" method="POST" style="width: 300px;">
+<form id="formAjoutEval" asp-controller="Home" asp-action="AjoutEvaluation" method="POST" style="width: 300px;">
     @*<input type="hidden" asp-for="Eleve.EleveID" value="@Model.Eleve.EleveID"/>*@
 
     <legend>Renseigner chaque champ pour l'évaluation</legend>
@@ -24,7 +24,7 @@
         <label for="matiere" class="form-label">Matière : </label>
         <input type="text" id="matiere" class="form-control" asp-for="Evaluation.EvaluationMatiere" value="">
     </div>
-    <input type="submit" value="Ajouter" class="btn btn-secondary" id="btn_ajouter">
+    <input type="submit" value="Ajouter" class="btn btn-secondary" id="btn_ajouter" >
 </form>
 @if (Model != null)
 {
