@@ -124,7 +124,6 @@ namespace GestionClasseMvc.Controllers
                     model.ValidationMessages = messages;
                 return View(model);
                 }
-
             }
             return View();
         }
